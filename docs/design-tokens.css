@@ -1,0 +1,27 @@
+/* Prospera design tokens — reference in every component instead of hardcoding hex values or font names. See BRAND.md for rationale and usage rules. */
+
+:root {
+  /* Colors */
+  --prospera-lime: #c1ff72;    /* Lime — CTAs, highlights, stat numbers */
+  --prospera-dark: #14181A;    /* Breaker black — primary dark background */
+  --prospera-paper: #F0F0EA;   /* Site paper — primary light background */
+  --prospera-violet: #8c52ff;  /* violet — one emphasis moment per section, max */
+  --prospera-panel: #1E2426;   /* Panel grey — cards/panels on dark background */
+  --prospera-grey: #6B7280;    /* Conduit grey — secondary text, borders */
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif; /* headlines, 700 weight */
+  --font-body: 'IBM Plex Sans', sans-serif;    /* body copy, 400/500/600 */
+  --font-stat: 'Anton', sans-serif;            /* proof numbers only — do not use elsewhere */
+
+  /* Radius (industrial, not soft) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* Fonts are self-hosted via next/font/google in app/layout.tsx — the previous
+   Google Fonts @import was removed because a render-blocking third-party
+   stylesheet costs us mobile Lighthouse score, which feeds Google Ads Quality
+   Score. app/globals.css repoints --font-display/body/stat at the CSS variables
+   next/font generates. */

@@ -1,26 +1,62 @@
 @import "tailwindcss";
+@import "../docs/design-tokens.css";
 
+/*
+  docs/design-tokens.css is the canonical source for colors and radii — do not
+  redeclare those here. The only override below is the font stack: next/font
+  self-hosts each family under a generated name, so the literal 'Space Grotesk'
+  etc. in the token file would not resolve. Point the same token names at the
+  CSS variables app/layout.tsx exposes so components keep using --font-display,
+  --font-body, --font-stat as their API.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-ibm-plex-sans), sans-serif;
+  --font-stat: var(--font-anton), sans-serif;
+  --font-alt: var(--font-oswald), sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-lime: var(--prospera-lime);
+  --color-dark: var(--prospera-dark);
+  --color-paper: var(--prospera-paper);
+  --color-violet: var(--prospera-violet);
+  --color-panel: var(--prospera-panel);
+  --color-conduit: var(--prospera-grey);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-stat: var(--font-stat);
+  --font-alt: var(--font-alt);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--prospera-paper);
+  color: var(--prospera-dark);
+  font-family: var(--font-body);
+}
+
+/* The hero CTA is an in-page anchor to the calendar. Smooth only when the
+   visitor hasn't asked for less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* One visible focus treatment for the whole page. Lime reads on both the dark
+   and paper backgrounds, and the offset keeps it off the element's own edge. */
+:focus-visible {
+  outline: 3px solid var(--prospera-lime);
+  outline-offset: 3px;
+}
+
+/* Lime on paper is 1.04:1 — invisible. Anything focusable sitting on the light
+   background gets the dark ring instead. */
+.on-paper :focus-visible {
+  outline-color: var(--prospera-dark);
 }
