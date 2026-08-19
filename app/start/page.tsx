@@ -8,8 +8,8 @@ import { RealProblem } from "./_components/RealProblem";
 import { FinalCta } from "./_components/FinalCta";
 import { SiteFooter } from "./_components/SiteFooter";
 import { SiteHeader } from "./_components/SiteHeader";
-import { SocialProof } from "./_components/SocialProof";
 import { StepFraming } from "./_components/StepFraming";
+import { TestimonialSection } from "./_components/TestimonialSection";
 import { TrackingScripts } from "./_components/TrackingScripts";
 import { parseLeadContext } from "./lib/lead-context";
 
@@ -44,7 +44,7 @@ export default async function BookPage({
         <ProofStrip />
         <RealProblem />
         <Mechanism lead={lead} />
-        <SocialProof />
+        <TestimonialSection />
         <Guarantee />
         <ObjectionFaq />
         <FinalCta lead={lead} />
