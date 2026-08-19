@@ -28,6 +28,10 @@
   --font-body: var(--font-body);
   --font-stat: var(--font-stat);
   --font-alt: var(--font-alt);
+  /* Registers the `font-oswald` utility. Tailwind only emits font-* classes for
+     keys in this block, so the bare --font-oswald that next/font defines is not
+     enough on its own. */
+  --font-oswald: var(--font-alt);
 
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);

@@ -46,12 +46,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-AU">
-      <body
-        className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${anton.variable} ${oswald.variable} antialiased`}
-      >
-        {children}
-      </body>
+    // The next/font variable classes belong on <html>, not <body>. globals.css
+    // maps them onto --font-display/body/stat/alt inside a :root block, and a
+    // custom property is substituted on the element that declares it — from
+    // :root the raw --font-* vars on <body> are invisible, so every token
+    // resolved to nothing and all four families fell back to system-ui.
+    <html
+      lang="en-AU"
+      className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${anton.variable} ${oswald.variable}`}
+    >
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
