@@ -10,21 +10,20 @@ import type { ReactNode } from "react";
 */
 const QUESTIONS: { q: string; a: ReactNode }[] = [
   {
-    q: "$3,000 setup plus ad spend — is that going to spiral?",
+    q: "Will this end up costing me more than I think?",
     a: (
       <>
-        <p>No. Here&rsquo;s the whole ceiling.</p>
-        <p className="mt-4">
-          $1,500 now to build it. $1,500 on day 30, and only if we hit the
-          guarantee. That&rsquo;s $3,000 to Prospera, full stop. After that
-          it&rsquo;s $99 per qualified booked assessment — you pay when someone
-          is sitting in your diary, not for clicks.
+        <p>
+          No surprises. The build is a flat, one-time cost - paid once, split in
+          two so we&rsquo;ve got skin in the game too: half up front to build
+          it, half at day 30, and we only see that second half if we've hit the
+          lead guarantee. If we don&rsquo;t, you simply don&rsquo;t pay it. No
+          refund chase, no fine print.
         </p>
         <p className="mt-4">
-          Ad spend is separate and it&rsquo;s yours. It goes straight to Google
-          and Meta on your card, not through us. Budget around $2,250 a month
-          minimum for a Melbourne suburb to move. We never touch that money, so
-          it can&rsquo;t quietly become our margin.
+          Ad spend is separate and it&rsquo;s yours - it goes straight to Google
+          and Meta on your card, never through us, so it can&rsquo;t quietly
+          become our margin.
         </p>
       </>
     ),
@@ -53,9 +52,9 @@ const QUESTIONS: { q: string; a: ReactNode }[] = [
           The question is what happens the month your best two referral sources
           go quiet at the same time. A builder finishes a project. A mate
           retires. It&rsquo;s happened to every sparkie who&rsquo;s been out on
-          his own more than a couple of years, and it always lands in a month you
-          had wages to cover. This is a second engine so that month isn&rsquo;t a
-          crisis.
+          his own more than a couple of years, and it always lands in a month
+          you had wages to cover. This is a second engine so that month
+          isn&rsquo;t a crisis.
         </p>
       </>
     ),

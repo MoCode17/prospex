@@ -1,3 +1,4 @@
+import { ConduitPattern } from "./ConduitPattern";
 import { TestimonialCard } from "./TestimonialCard";
 import { testimonials } from "../lib/testimonials";
 
@@ -6,9 +7,10 @@ import { testimonials } from "../lib/testimonials";
   visitor only ever sees the first slide, which throws away half the proof in
   exchange for a swipe animation nobody asked for.
 
-  No star ratings and no "verified client" badge either. We have no linked
-  public review to point at, and an unverifiable trust badge reads worse to a
-  sceptic than no badge at all.
+  No "verified client" badge. We have no linked public review to point at, and
+  an unverifiable trust badge reads worse to a sceptic than no badge at all.
+  (The five-star row on the card is a different thing — it states our own
+  rating rather than implying third-party verification.)
 */
 export function TestimonialSection() {
   // A heading sitting above nothing reads as broken, so the section drops out
@@ -20,8 +22,12 @@ export function TestimonialSection() {
   return (
     // on-paper switches the focus ring to dark — lime on paper is 1.04:1 and
     // effectively invisible. See globals.css.
-    <section className="on-paper bg-paper py-16 sm:py-24">
-      <div className="mx-auto max-w-5xl px-5">
+    <section className="on-paper relative isolate bg-paper py-16 sm:py-24">
+      {/* Same pattern and same scale as Mechanism directly above: the two light
+          sections are meant to read as one continuous run, not two panels. */}
+      <ConduitPattern id="testimonials" />
+
+      <div className="relative mx-auto max-w-5xl px-5">
         <h2 className="font-display text-3xl leading-tight font-bold text-balance text-dark sm:text-4xl">
           Is this working for other sparkies?
         </h2>

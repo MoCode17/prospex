@@ -1,3 +1,4 @@
+import { ConduitPattern } from "./ConduitPattern";
 import { serviceLabel } from "../lib/lead-context";
 import type { LeadContext } from "../lib/lead-context";
 
@@ -34,8 +35,14 @@ export function Mechanism({ lead }: { lead: LeadContext }) {
   const job = serviceLabel(lead.service);
 
   return (
-    <section className="bg-paper py-16 sm:py-16">
-      <div className="mx-auto max-w-3xl px-5">
+    // isolate gives the section its own stacking context, so the pattern layer
+    // can't escape it and slide under an adjacent section.
+    <section className="relative isolate bg-paper py-16 sm:py-16">
+      <ConduitPattern id="mechanism" />
+
+      {/* relative, so the content sits above the pattern without needing an
+          explicit z-index on every child. */}
+      <div className="relative mx-auto max-w-3xl px-5">
         <h2 className="font-display text-3xl leading-tight font-bold text-balance text-dark sm:text-4xl">
           Three layers, one system.
         </h2>

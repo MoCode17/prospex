@@ -8,6 +8,7 @@
   --prospera-violet: #8c52ff;  /* violet — one emphasis moment per section, max */
   --prospera-panel: #1E2426;   /* Panel grey — cards/panels on dark background */
   --prospera-grey: #6B7280;    /* Conduit grey — secondary text, borders */
+  --prospera-gold: #E0A82E;    /* Rating gold — five-star rows on testimonials only. Off-palette on purpose: a review star reads as a review star, and lime would read as a Prospera accent rather than a rating. Do not reach for it anywhere else. */
 
   /* Typography */
   --font-display: 'Space Grotesk', sans-serif; /* headlines, 700 weight */

@@ -26,9 +26,6 @@ export function RealProblem() {
           <br />
           <span className="text-lime">It Wasn&rsquo;t Your Fault.</span>
         </h2>
-        <h2 className="font-display text-3xl text-center leading-tight font-bold text-balance text-paper sm:text-4xl">
-          It wasn&rsquo;t your fault.
-        </h2>
 
         <p className="mt-6 text-lg leading-relaxed text-paper/80">
           None of what you tried was connected to anything else. The ads pointed

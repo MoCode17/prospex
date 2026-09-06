@@ -38,6 +38,40 @@ function Avatar({ testimonial }: { testimonial: Testimonial }) {
   );
 }
 
+/**
+ * Five filled stars, sized to sit above the result headline without competing
+ * with it.
+ *
+ * Hard-coded at five rather than driven by a `rating` field: every testimonial
+ * we publish is a five-star client, and a rating prop we'd only ever pass 5 to
+ * is a lie about how the data works. Add the field when a four-star quote
+ * actually ships.
+ *
+ * One role="img" with a label on the wrapper, and the stars themselves hidden —
+ * otherwise a screen reader reads five anonymous graphics in a row.
+ */
+function StarRating() {
+  return (
+    <div
+      role="img"
+      aria-label="Rated 5 out of 5"
+      className="mb-4 flex items-center gap-1 text-gold"
+    >
+      {Array.from({ length: 5 }, (_, i) => (
+        <svg
+          key={i}
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          fill="#FFD700"
+          className="size-4"
+        >
+          <path d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.78L10 14.77l-5.2 2.73.99-5.78-4.21-4.1 5.82-.85L10 1.5z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   // Only the fields we actually have. Joining a filtered list is what keeps a
   // missing suburb or trade from leaving a dangling separator behind.
@@ -46,7 +80,15 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     // h-full + flex-col so two cards match height whatever the quote length,
     // with the byline pushed to the bottom of both by mt-auto.
-    <figure className="flex h-full flex-col rounded-lg border border-conduit/40 px-6 py-7">
+    //
+    // bg-paper is load-bearing rather than redundant with the section behind
+    // it: that section carries the conduit pattern, and an opaque fill is what
+    // keeps those traces from running underneath the quote.
+    <figure className="flex h-full flex-col rounded-lg border border-conduit/40 bg-paper px-6 py-7">
+      {/* Above the headline, not beside the byline: the stars are the cheapest
+          signal on the card to read, so they go where the eye lands first. */}
+      <StarRating />
+
       {/* Display weight, not body weight — this is the proof, not a caption. */}
       <p className="font-display text-lg leading-snug font-bold text-balance text-dark sm:text-xl">
         {testimonial.resultHeadline}

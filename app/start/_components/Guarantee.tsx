@@ -34,9 +34,9 @@ export function Guarantee() {
           </p>
 
           <p className="mt-5 text-lg leading-relaxed text-paper/80">
-            If we don&rsquo;t hit 15, you don&rsquo;t pay the second $1,500. You
-            keep the funnel, the pipeline and the follow-up we built, and we
-            keep working on it until you get there.
+            If we don&rsquo;t hit 30, we work for free until you do. You keep
+            the funnel, the pipeline and the follow-up we built, and we keep
+            working on it until you get there.
           </p>
         </div>
       </div>
