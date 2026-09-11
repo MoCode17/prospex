@@ -60,7 +60,7 @@ export const testimonials: Testimonial[] = [
     // business" — the original phrasing was ambiguous. Ships as written until
     // someone checks it with Jesse.
     resultHeadline:
-      "Went from inconsistent referrals to 47 booked jobs in his first year working with Prospera.",
+      "Went from inconsistent referrals to 47 booked jobs in his first year working with Prospex.",
     quote:
       "I can't be any happier, honestly. Started my business last year and I was struggling to get consistent work — tried doing it myself, wasted money, got nowhere. Mo built the whole thing, I didn't have to do a thing. Jobs started coming in week two. If you're sitting on the fence out there, don't waste your time, just do it.",
   },

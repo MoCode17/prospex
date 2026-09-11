@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project status
 
-`prospera` is a Next.js app freshly bootstrapped from `create-next-app`. As of this writing `app/page.tsx` is still the default starter page — there is no custom application logic, no test setup, and no API routes yet. Treat this as a greenfield codebase.
+`prospex` is a Next.js app freshly bootstrapped from `create-next-app`. As of this writing `app/page.tsx` is still the default starter page — there is no custom application logic, no test setup, and no API routes yet. Treat this as a greenfield codebase.
 
 ## Commands
 
@@ -28,6 +28,6 @@ There is no test runner configured yet.
 
 ## Brand & design
 
-See @docs/BRAND.md for Prospera's palette rationale, typography, and voice rules.
+See @docs/BRAND.md for Prospex's palette rationale, typography, and voice rules.
 Design tokens (colors, fonts) live in @docs/design-tokens.css — reference these
 CSS variables in all components instead of hardcoding hex values or font names.

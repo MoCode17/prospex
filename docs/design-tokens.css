@@ -1,14 +1,14 @@
-/* Prospera design tokens — reference in every component instead of hardcoding hex values or font names. See BRAND.md for rationale and usage rules. */
+/* Prospex design tokens — reference in every component instead of hardcoding hex values or font names. See BRAND.md for rationale and usage rules. */
 
 :root {
   /* Colors */
-  --prospera-lime: #c1ff72;    /* Lime — CTAs, highlights, stat numbers */
-  --prospera-dark: #14181A;    /* Breaker black — primary dark background */
-  --prospera-paper: #F0F0EA;   /* Site paper — primary light background */
-  --prospera-violet: #8c52ff;  /* violet — one emphasis moment per section, max */
-  --prospera-panel: #1E2426;   /* Panel grey — cards/panels on dark background */
-  --prospera-grey: #6B7280;    /* Conduit grey — secondary text, borders */
-  --prospera-gold: #E0A82E;    /* Rating gold — five-star rows on testimonials only. Off-palette on purpose: a review star reads as a review star, and lime would read as a Prospera accent rather than a rating. Do not reach for it anywhere else. */
+  --prospex-lime: #c1ff72;    /* Lime — CTAs, highlights, stat numbers */
+  --prospex-dark: #14181A;    /* Breaker black — primary dark background */
+  --prospex-paper: #F0F0EA;   /* Site paper — primary light background */
+  --prospex-violet: #8c52ff;  /* violet — one emphasis moment per section, max */
+  --prospex-panel: #1E2426;   /* Panel grey — cards/panels on dark background */
+  --prospex-grey: #6B7280;    /* Conduit grey — secondary text, borders */
+  --prospex-gold: #E0A82E;    /* Rating gold — five-star rows on testimonials only. Off-palette on purpose: a review star reads as a review star, and lime would read as a Prospex accent rather than a rating. Do not reach for it anywhere else. */
 
   /* Typography */
   --font-display: 'Space Grotesk', sans-serif; /* headlines, 700 weight */
