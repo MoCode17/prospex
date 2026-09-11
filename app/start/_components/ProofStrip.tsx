@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePrefersReducedMotion } from "../lib/use-prefers-reduced-motion";
 
 /*
-  MARKET DATA, NOT PROSPERA RESULTS. Prospera has no live campaign to cite yet,
+  MARKET DATA, NOT PROSPEX RESULTS. Prospex has no live campaign to cite yet,
   so every number here is framed as industry data and labelled as such on the
   page. Do not reword these into "our clients see…" without real, trackable
   numbers to back it.
@@ -119,7 +119,7 @@ export function ProofStrip() {
         </div>
 
         <p className="mt-8 text-sm text-paper/70">
-          Industry figures for the Australian trades, not Prospera client
+          Industry figures for the Australian trades, not Prospex client
           results.
         </p>
       </div>

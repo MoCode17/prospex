@@ -17,13 +17,13 @@
 }
 
 @theme inline {
-  --color-lime: var(--prospera-lime);
-  --color-dark: var(--prospera-dark);
-  --color-paper: var(--prospera-paper);
-  --color-violet: var(--prospera-violet);
-  --color-panel: var(--prospera-panel);
-  --color-conduit: var(--prospera-grey);
-  --color-gold: var(--prospera-gold);
+  --color-lime: var(--prospex-lime);
+  --color-dark: var(--prospex-dark);
+  --color-paper: var(--prospex-paper);
+  --color-violet: var(--prospex-violet);
+  --color-panel: var(--prospex-panel);
+  --color-conduit: var(--prospex-grey);
+  --color-gold: var(--prospex-gold);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -40,8 +40,8 @@
 }
 
 body {
-  background: var(--prospera-paper);
-  color: var(--prospera-dark);
+  background: var(--prospex-paper);
+  color: var(--prospex-dark);
   font-family: var(--font-body);
 }
 
@@ -56,12 +56,12 @@ body {
 /* One visible focus treatment for the whole page. Lime reads on both the dark
    and paper backgrounds, and the offset keeps it off the element's own edge. */
 :focus-visible {
-  outline: 3px solid var(--prospera-lime);
+  outline: 3px solid var(--prospex-lime);
   outline-offset: 3px;
 }
 
 /* Lime on paper is 1.04:1 — invisible. Anything focusable sitting on the light
    background gets the dark ring instead. */
 .on-paper :focus-visible {
-  outline-color: var(--prospera-dark);
+  outline-color: var(--prospex-dark);
 }

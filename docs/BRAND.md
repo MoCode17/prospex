@@ -1,6 +1,6 @@
-# Prospera brand
+# Prospex brand
 
-Reference for anyone (human or Claude) writing copy or building UI for Prospera. Pairs with `design-tokens.css` for exact values.
+Reference for anyone (human or Claude) writing copy or building UI for Prospex. Pairs with `design-tokens.css` for exact values.
 
 ## Logic
 
@@ -10,12 +10,12 @@ Lime = hi-vis / electrical-hazard colouring — the world electricians already l
 
 | Token | Hex | Use |
 |---|---|---|
-| `--prospera-lime` (Live wire) | `#c1ff72` | CTAs, headline highlights, stat numbers, "live" indicators. The one color that should grab the eye. |
-| `--prospera-dark` (Breaker black) | `#14181A` | Primary dark background — hero sections, nav. |
-| `--prospera-paper` (Site paper) | `#F0F0EA` | Primary light background, body sections. Not stark white. |
-| `--prospera-violet` (Arc violet) | `#8c52ff` | Sparingly. One badge, one icon accent, one emphasis line per section — never a base color, never two uses in the same view. |
-| `--prospera-panel` (Panel grey) | `#1E2426` | Cards/panels sitting on the dark background, for subtle depth without going flat black. |
-| `--prospera-grey` (Conduit grey) | `#6B7280` | Secondary text on light backgrounds, borders, muted labels. |
+| `--prospex-lime` (Live wire) | `#c1ff72` | CTAs, headline highlights, stat numbers, "live" indicators. The one color that should grab the eye. |
+| `--prospex-dark` (Breaker black) | `#14181A` | Primary dark background — hero sections, nav. |
+| `--prospex-paper` (Site paper) | `#F0F0EA` | Primary light background, body sections. Not stark white. |
+| `--prospex-violet` (Arc violet) | `#8c52ff` | Sparingly. One badge, one icon accent, one emphasis line per section — never a base color, never two uses in the same view. |
+| `--prospex-panel` (Panel grey) | `#1E2426` | Cards/panels sitting on the dark background, for subtle depth without going flat black. |
+| `--prospex-grey` (Conduit grey) | `#6B7280` | Secondary text on light backgrounds, borders, muted labels. |
 
 Rule of thumb: if a screen has more than one violet element, cut one.
 

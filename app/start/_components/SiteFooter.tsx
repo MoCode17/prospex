@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-dark">
       <div className="mx-auto max-w-5xl border-t border-conduit/40 px-5 py-10">
-        <p className="font-display text-lg font-bold text-paper">Prospera</p>
+        <p className="font-display text-lg font-bold text-paper">Prospex</p>
 
         <div className="mt-4 flex flex-col gap-3 text-base text-paper/80 sm:flex-row sm:gap-8">
           {contact.hasPhone ? (

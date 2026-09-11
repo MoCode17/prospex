@@ -35,9 +35,9 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Prospera — Melbourne electricians",
+  title: "Prospex — Melbourne electricians",
   description:
-    "Prospera builds and runs the lead system for Melbourne electricians.",
+    "Prospex builds and runs the lead system for Melbourne electricians.",
 };
 
 export default function RootLayout({

@@ -14,7 +14,7 @@ import { TrackingScripts } from "./_components/TrackingScripts";
 import { parseLeadContext } from "./lib/lead-context";
 
 export const metadata: Metadata = {
-  title: "Book your strategy call — Prospera",
+  title: "Book your strategy call — Prospex",
   description:
     "30 qualified jobs in your first 30 days, or you don't pay. For licensed Aussie electricians.",
   // Paid-traffic funnel page reached only after the GHL questionnaire — it

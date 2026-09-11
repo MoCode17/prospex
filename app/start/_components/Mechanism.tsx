@@ -4,7 +4,7 @@ import type { LeadContext } from "../lib/lead-context";
 
 /*
   ⚠️ NICHE FLAG — UNRESOLVED. This copy assumes the broad "all Melbourne
-  electricians" niche (Suburb Domination System™). If Prospera has since
+  electricians" niche (Suburb Domination System™). If Prospex has since
   committed to the narrow switchboard-specialist niche (The Switchboard
   Pipeline), Layer 1's service list and the framing across all three layers
   need to shift to switchboard / electrification-upgrade language specifically
