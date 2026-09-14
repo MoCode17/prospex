@@ -10,7 +10,7 @@ export function SiteHeader() {
     <header className="bg-dark">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
         <Image
-          src="/images/PROSPEX logo.svg"
+          src="/images/PROSPEX logo white.svg"
           alt="Prospex"
           width={180}
           height={40}

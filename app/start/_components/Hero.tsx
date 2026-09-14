@@ -26,7 +26,7 @@ export function Hero({ lead }: { lead: LeadContext }) {
         </p>
 
         <h1 className="mt-6 font-display text-4xl leading-tight font-bold text-balance text-paper sm:text-5xl lg:text-6xl">
-          30+ Qualified Jobs In Your First 30 Days — Or We Keep Working Free
+          100+ Qualified Leads In Your First 30 Days — Or We Keep Working Free
           Until You Get Them.
         </h1>
 
