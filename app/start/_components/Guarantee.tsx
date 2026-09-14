@@ -20,7 +20,7 @@ export function Guarantee() {
           <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
             {/* Anton's second and last appearance on the page. */}
             <span className="font-stat text-6xl leading-none text-lime sm:text-7xl">
-              30+
+              100+
             </span>
             <span className="font-display text-2xl font-bold text-paper sm:text-3xl">
               qualified leads in your first 30 days.
@@ -34,7 +34,7 @@ export function Guarantee() {
           </p>
 
           <p className="mt-5 text-lg leading-relaxed text-paper/80">
-            If we don&rsquo;t hit 30, we work for free until you do. You keep
+            If we don&rsquo;t hit 100, we work for free until you do. You keep
             the funnel, the pipeline and the follow-up we built, and we keep
             working on it until you get there.
           </p>
