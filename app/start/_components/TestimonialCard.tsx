@@ -14,10 +14,10 @@ const AVATAR_PX = 48;
  * a missing asset undercuts the testimonial it sits under.
  */
 function Avatar({ testimonial }: { testimonial: Testimonial }) {
-  if (testimonial.photoUrl) {
+  if (testimonial.photo) {
     return (
       <Image
-        src={testimonial.photoUrl}
+        src={testimonial.photo}
         width={AVATAR_PX}
         height={AVATAR_PX}
         // Empty alt on purpose — the name sits immediately beside it, so alt
@@ -74,8 +74,12 @@ function StarRating() {
 
 export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   // Only the fields we actually have. Joining a filtered list is what keeps a
-  // missing suburb or trade from leaving a dangling separator behind.
-  const details = [testimonial.trade, testimonial.suburb].filter(Boolean);
+  // missing field from leaving a dangling separator behind.
+  const details = [
+    testimonial.businessName,
+    testimonial.trade,
+    testimonial.suburb,
+  ].filter(Boolean);
 
   return (
     // h-full + flex-col so two cards match height whatever the quote length,
@@ -107,7 +111,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <div className="min-w-0">
           <p className="font-display font-semibold text-dark">
             {testimonial.name}
-            {testimonial.surnameInitial ? ` ${testimonial.surnameInitial}` : ""}
+            {testimonial.surname ? ` ${testimonial.surname}` : ""}
           </p>
           {/* Conduit grey fails AA against paper, so muted text is the
               foreground at reduced opacity instead. See BRAND.md. */}

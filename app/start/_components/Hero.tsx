@@ -1,12 +1,11 @@
 import { CtaButton } from "./CtaButton";
-import type { LeadContext } from "../lib/lead-context";
 
 /*
   H1 A/B variants — swap the <h1> body below to test. Keep one live at a time.
 
   SHIPPED (guarantee-led):
-    "15 Qualified Jobs In Your First 30 Days — Or We Keep Working Free Until
-     You Get Them."
+    "$30,000 in Quote Requests in Your First 30 Days — Or We Keep Working Free
+     Until You Get Them."
 
   VARIANT B (wedge-led):
     "If Marketing Hasn't Worked For You Yet, It Wasn't Your Fault."
@@ -17,7 +16,7 @@ import type { LeadContext } from "../lib/lead-context";
   not a throwaway.
 */
 
-export function Hero({ lead }: { lead: LeadContext }) {
+export function Hero() {
   return (
     <section className="bg-dark">
       <div className="mx-auto max-w-5xl px-5 pt-12 pb-16 sm:pt-20 sm:pb-24">
@@ -26,19 +25,18 @@ export function Hero({ lead }: { lead: LeadContext }) {
         </p>
 
         <h1 className="mt-6 font-display text-4xl leading-tight font-bold text-balance text-paper sm:text-5xl lg:text-6xl">
-          100+ Qualified Leads In Your First 30 Days — Or We Keep Working Free
-          Until You Get Them.
+          $30,000 in Quote Requests in Your First 30 Days — Or We Keep Working
+          Free Until You Get Them.
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-paper/80">
-          {lead.firstName ? `${lead.firstName}, you` : "You"}&rsquo;ve told us
-          about your business. Here&rsquo;s exactly how the Suburb Domination
-          System fills your calendar, and how to lock your suburb in before
-          another sparkie does.
+          The Local Domination System puts you at the top of Google in your
+          local area, texts back every enquiry within 2 minutes, and answers the
+          calls you miss on the tools. One electrician per region.
         </p>
 
         <CtaButton className="mt-10 w-full sm:w-auto">
-          Book Your Free Strategy Call
+          Check If My Region&rsquo;s Still Open
         </CtaButton>
       </div>
     </section>

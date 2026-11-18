@@ -40,7 +40,7 @@ So:
 
 ## Typography
 
-**Display / headlines** — Space Grotesk, 700 weight. Slightly technical edge, earns the "AI dialler / CRM automation" side of the offer without reading as generic SaaS.
+**Display / headlines** — Space Grotesk, 700 weight. Slightly technical edge, earns the "missed-call answering / automated follow-up" side of the offer without reading as generic SaaS.
 
 **Body / UI** — IBM Plex Sans, 400/500/600. Plain, utilitarian, reads like a work order rather than an agency pitch.
 
@@ -53,7 +53,7 @@ Fallback stacks: `'Space Grotesk', sans-serif` / `'IBM Plex Sans', sans-serif` /
 - Write like a sparkie talks — plain, direct, no marketing jargon.
 - Lead with the wound, not the dream. Acknowledge what's already been tried and failed before pitching anything.
 - Name their life exactly: Hilux, 6:30am starts, WhatsApp chaos, HiPages frustration.
-- Specific numbers, specific suburbs, specific job types, specific time frames — always.
+- Specific numbers, specific local areas, specific job types, specific time frames — always.
 - Never say: dominate, leverage, synergy, full-service, transparent, results-driven, premium leads that convert, local experts, Australia's leading.
 - Tone: confident but not arrogant, empathetic but not soft, straight-talking but not aggressive.
 

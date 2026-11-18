@@ -92,12 +92,3 @@ export function serviceLabel(service: ServiceType | null): string | null {
   return service ? SERVICE_LABELS[service] : null;
 }
 
-/**
- * Suburb-exclusivity line for the two CTA blocks. Named rather than inlined so
- * both instances stay identical and the fallback can't drift.
- */
-export function exclusivityLine(suburb: string | null): string {
-  return suburb
-    ? `We only take one sparkie in ${suburb}.`
-    : "We only take one sparkie per suburb.";
-}

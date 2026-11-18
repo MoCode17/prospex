@@ -12,11 +12,12 @@
   stops working as proof.
 
   Every field except id/name/resultHeadline/quote is optional and absent on
-  purpose: we don't have confirmed surnames, suburbs, trades or photos yet, and
-  the card is built to look finished without them. Fill them in here as they're
+  purpose: we don't have confirmed surnames, suburbs, business names, trades or
+  photos yet, and the card renders each one only when it's present — never a
+  placeholder. Fill them in here as they're
   confirmed — no component change needed.
 
-  photoUrl must be a path under public/ (e.g. "/images/testimonials/michael.jpg").
+  photo must be a path under public/ (e.g. "/images/testimonials/michael.jpg").
   A remote URL would need images.remotePatterns added to next.config.ts first.
 */
 
@@ -24,10 +25,12 @@ export interface Testimonial {
   id: string;
   /** First name only, unless a surname is confirmed and added. */
   name: string;
-  /** e.g. "M." — add once confirmed. */
-  surnameInitial?: string;
-  /** e.g. "Preston" — add once confirmed. */
+  /** Surname or initial, e.g. "M." — add once confirmed. */
+  surname?: string;
+  /** The client's own suburb, e.g. "Preston" — add once confirmed. */
   suburb?: string;
+  /** e.g. "Smith Electrical" — add once confirmed. */
+  businessName?: string;
   /** e.g. "Licensed electrician" — add once confirmed. */
   trade?: string;
   /** The bolded outcome line above the quote. */
@@ -35,7 +38,7 @@ export interface Testimonial {
   /** Full testimonial text, verbatim. */
   quote: string;
   /** Optional; the card renders an initials avatar when it's absent. */
-  photoUrl?: string;
+  photo?: string;
 }
 
 /*
@@ -48,6 +51,8 @@ export const testimonials: Testimonial[] = [
   {
     id: "michael",
     name: "Michael",
+    // TODO: fill in once confirmed with Michael — surname, suburb,
+    // businessName, photo (e.g. "/images/testimonials/michael.jpg").
     resultHeadline:
       "Went from feast-or-famine to his best three months ever — booked out 4 weeks in advance for the first time since starting his business.",
     quote:
@@ -56,6 +61,8 @@ export const testimonials: Testimonial[] = [
   {
     id: "jesse",
     name: "Jesse",
+    // TODO: fill in once confirmed with Jesse — surname, suburb,
+    // businessName, photo (e.g. "/images/testimonials/jesse.jpg").
     // NOTE: confirm this is "first year as a client," not "first year in
     // business" — the original phrasing was ambiguous. Ships as written until
     // someone checks it with Jesse.

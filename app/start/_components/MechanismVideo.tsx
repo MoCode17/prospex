@@ -8,8 +8,10 @@ import { usePrefersReducedMotion } from "../lib/use-prefers-reduced-motion";
   stuck in NETWORK_LOADING rather than firing `error`, so the visitor would sit
   looking at an empty box with nothing to tell them why.
 */
-const VIDEO_SRC = process.env.NEXT_PUBLIC_VIDEO_URL ?? "";
-const POSTER_SRC = process.env.NEXT_PUBLIC_VIDEO_POSTER_URL ?? "";
+// TODO: swap in new VSL — replace these two values with the new video and
+// poster URLs (or update NEXT_PUBLIC_VIDEO_URL / NEXT_PUBLIC_VIDEO_POSTER_URL).
+const VSL_SRC = process.env.NEXT_PUBLIC_VIDEO_URL ?? "";
+const VSL_POSTER = process.env.NEXT_PUBLIC_VIDEO_POSTER_URL ?? "";
 const CAPTIONS_SRC = process.env.NEXT_PUBLIC_VIDEO_CAPTIONS_URL ?? "";
 
 /** iOS Safari can't fullscreen a container — only the video element itself. */
@@ -165,7 +167,7 @@ export function MechanismVideo() {
     }
   }
 
-  if (!VIDEO_SRC || sourceFailed) {
+  if (!VSL_SRC || sourceFailed) {
     return (
       <div className="flex aspect-video w-full items-center justify-center rounded-lg border-2 border-dashed border-conduit/60 px-6 text-center">
         <div>
@@ -188,7 +190,7 @@ export function MechanismVideo() {
         <video
           ref={videoRef}
           className="block aspect-video w-full"
-          poster={POSTER_SRC || undefined}
+          poster={VSL_POSTER || undefined}
           preload="metadata"
           muted
           playsInline
@@ -216,7 +218,7 @@ export function MechanismVideo() {
           onError={() => setSourceFailed(true)}
         >
           <source
-            src={VIDEO_SRC}
+            src={VSL_SRC}
             type="video/mp4"
             onError={() => setSourceFailed(true)}
           />

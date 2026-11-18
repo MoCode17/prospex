@@ -4,7 +4,7 @@ import type { LeadContext } from "../lib/lead-context";
 
 /*
   ⚠️ NICHE FLAG — UNRESOLVED. This copy assumes the broad "all Melbourne
-  electricians" niche (Suburb Domination System™). If Prospex has since
+  electricians" niche (Local Domination System™). If Prospex has since
   committed to the narrow switchboard-specialist niche (The Switchboard
   Pipeline), Layer 1's service list and the framing across all three layers
   need to shift to switchboard / electrification-upgrade language specifically
@@ -13,11 +13,15 @@ import type { LeadContext } from "../lib/lead-context";
   waiting on Mo. Same flag applies to SERVICE_TYPES in lib/lead-context.ts.
 */
 
-const LAYERS = [
+const LAYERS: readonly {
+  number: string;
+  name: string;
+  body: string | readonly string[];
+}[] = [
   {
     number: "01",
     name: "Capture",
-    body: "Google Ads targeted to your suburbs and your job types. They only show to someone typing the thing they need, right now, in the area you actually drive to. No boosted posts. No hoping.",
+    body: "Google Ads targeted to your local area and your job types. They only show to someone typing the thing they need, right now, in the area you actually drive to. No boosted posts. No hoping.",
   },
   {
     number: "02",
@@ -27,9 +31,14 @@ const LAYERS = [
   {
     number: "03",
     name: "Close & Retain",
-    body: "Every lead sits in one pipeline. Five to seven days of automated follow-up on anyone who goes quiet. An AI dialler picks up what you miss on the tools and after hours. Review requests go out on their own once the job's done.",
+    body: [
+      "Every job in one app on your phone.",
+      "5–7 days of automatic follow-up sequences, so no enquiry goes cold.",
+      "Every missed call answered or texted back in seconds, even at 9pm.",
+      "Review requests sent automatically after every job.",
+    ],
   },
-] as const;
+];
 
 export function Mechanism({ lead }: { lead: LeadContext }) {
   const job = serviceLabel(lead.service);
@@ -70,16 +79,23 @@ export function Mechanism({ lead }: { lead: LeadContext }) {
               <h3 className="mt-2 text-center font-display text-2xl font-bold text-lime">
                 {layer.name}
               </h3>
-              <p className="mt-3 text-base leading-relaxed text-paper/80">
-                {layer.body}
-              </p>
+              {typeof layer.body === "string" ? (
+                <p className="mt-3 text-base leading-relaxed text-paper/80">
+                  {layer.body}
+                </p>
+              ) : (
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-paper/80 marker:text-lime">
+                  {layer.body.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ol>
 
         <p className="mt-12 border-b border-conduit/40 pb-8 text-base leading-relaxed text-dark/80">
-          All of it reports into one dashboard. You check it once a week, on the
-          couch, in about four minutes.
+          You check one app for about 4 minutes a week.
         </p>
       </div>
     </section>

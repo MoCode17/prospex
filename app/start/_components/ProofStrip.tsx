@@ -9,54 +9,91 @@ import { usePrefersReducedMotion } from "../lib/use-prefers-reduced-motion";
   page. Do not reword these into "our clients see…" without real, trackable
   numbers to back it.
 
-  TODO: attach the source for each figure before this goes live — an unsourced
-  stat in front of a sceptical tradie is worse than no stat.
+  Each stat takes an optional `source`, rendered as a small caption under the
+  number only when filled. An unsourced stat in front of a sceptical tradie is
+  worse than no stat — fill these in before this goes live.
 
   Three, not four. This visitor already saw stats inside the questionnaire; a
   fourth reads as padding.
 */
-const STATS = [
+type Stat = {
+  value: number;
+  prefix: string;
+  suffix: string;
+  label: string;
+  /** Where the figure comes from. Caption renders only when this is filled. */
+  source?: string;
+};
+
+const STATS: readonly Stat[] = [
   {
     value: 40,
     prefix: "",
     suffix: "%",
     label: "of tradie calls go unanswered during work hours",
+    source: "", // TODO: add source
   },
   {
     value: 20,
     prefix: "$",
     suffix: "k+",
     label: "average lost per year to missed calls",
+    source: "", // TODO: add source
   },
   {
     value: 78,
     prefix: "",
     suffix: "%",
     label: 'of "electrician near me" searches convert to a same-day call',
+    source: "", // TODO: add source
   },
-] as const;
+];
 
 const DURATION_MS = 1100;
 
-/** Counts 0 → target once, the first time the element scrolls into view. */
+/**
+ * Count-up that never ships a zero.
+ *
+ * State starts at the final value, so the server-rendered HTML — what crawlers,
+ * no-JS visitors and the pre-hydration paint all see — always carries the real
+ * number. After hydration the first IntersectionObserver callback reports
+ * where the stat sits:
+ *   - already on screen: leave it alone. Resetting to 0 there would be the very
+ *     flash this exists to avoid.
+ *   - off screen: drop to 0 while nobody can see it, then count up the first
+ *     time it scrolls into view.
+ * Reduced motion skips all of it and keeps the final value.
+ */
 function useCountUp(target: number) {
-  const [animatedValue, setAnimatedValue] = useState(0);
+  const [value, setValue] = useState(target);
   const nodeRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const node = nodeRef.current;
-    // Reduced motion is handled by deriving the value below rather than
-    // writing state here — no animation to set up, nothing to observe.
     if (!node || prefersReducedMotion) return;
 
     let frame = 0;
-    let hasRun = false;
+    let isFirstReport = true;
+    let isArmed = false;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (!entries[0].isIntersecting || hasRun) return;
-        hasRun = true;
+        const isVisible = entries[0].isIntersecting;
+
+        if (isFirstReport) {
+          isFirstReport = false;
+          if (isVisible) {
+            observer.disconnect();
+            return;
+          }
+          isArmed = true;
+          setValue(0);
+          return;
+        }
+
+        if (!isVisible || !isArmed) return;
+        isArmed = false;
         observer.disconnect();
 
         const start = performance.now();
@@ -64,7 +101,7 @@ function useCountUp(target: number) {
           const progress = Math.min((now - start) / DURATION_MS, 1);
           // Ease-out: fast off the mark, settles onto the number.
           const eased = 1 - Math.pow(1 - progress, 3);
-          setAnimatedValue(Math.round(target * eased));
+          setValue(Math.round(target * eased));
           if (progress < 1) frame = requestAnimationFrame(tick);
         };
         frame = requestAnimationFrame(tick);
@@ -75,30 +112,33 @@ function useCountUp(target: number) {
     observer.observe(node);
 
     // Cancelling the frame has to happen out here — a value returned from the
-    // observer callback is discarded, so cleanup can't live inside it.
+    // observer callback is discarded, so cleanup can't live inside it. Snap to
+    // the final value too, so an unmount mid-count (or a reduced-motion switch)
+    // never strands the number part-way.
     return () => {
       observer.disconnect();
       cancelAnimationFrame(frame);
+      setValue(target);
     };
   }, [target, prefersReducedMotion]);
 
-  return {
-    value: prefersReducedMotion ? target : animatedValue,
-    nodeRef,
-  };
+  return { value, nodeRef };
 }
 
-function Stat({ stat }: { stat: (typeof STATS)[number] }) {
+function StatItem({ stat }: { stat: Stat }) {
   const { value, nodeRef } = useCountUp(stat.value);
 
   return (
     <div ref={nodeRef} className="text-center sm:text-left">
-      {/* Anton lives here and in the guarantee bar. Nowhere else on the page. */}
+      {/* Anton lives here and in the guarantee headline. Nowhere else on the page. */}
       <div className="font-stat text-5xl leading-none text-lime tabular-nums sm:text-6xl">
         {stat.prefix}
         {value}
         {stat.suffix}
       </div>
+      {stat.source && (
+        <p className="mt-2 text-xs text-paper/70">Source: {stat.source}</p>
+      )}
       <p className="mt-3 text-base leading-snug text-paper/80">{stat.label}</p>
     </div>
   );
@@ -114,7 +154,7 @@ export function ProofStrip() {
 
         <div className="mt-8 grid gap-10 sm:grid-cols-3 sm:gap-8">
           {STATS.map((stat) => (
-            <Stat key={stat.label} stat={stat} />
+            <StatItem key={stat.label} stat={stat} />
           ))}
         </div>
 

@@ -5,27 +5,19 @@ import type { ReactNode } from "react";
   visitor already cleared "who even are you" in the questionnaire, so nothing
   here re-litigates it.
 
-  The $99 per qualified booked assessment appears in the cost answer and NOWHERE
-  else on the page — see the note in Guarantee.tsx.
+  Pricing is deliberately not quoted on the page: one setup fee, one flat
+  monthly fee, exact numbers given on the call once we've looked at the region.
 */
 const QUESTIONS: { q: string; a: ReactNode }[] = [
   {
-    q: "Will this end up costing me more than I think?",
+    q: "Will it cost more than I expect?",
     a: (
-      <>
-        <p>
-          No surprises. The build is a flat, one-time cost - paid once, split in
-          two so we&rsquo;ve got skin in the game too: half up front to build
-          it, half at day 30, and we only see that second half if we've hit the
-          lead guarantee. If we don&rsquo;t, you simply don&rsquo;t pay it. No
-          refund chase, no fine print.
-        </p>
-        <p className="mt-4">
-          Ad spend is separate and it&rsquo;s yours - it goes straight to Google
-          and Meta on your card, never through us, so it can&rsquo;t quietly
-          become our margin.
-        </p>
-      </>
+      <p>
+        No surprises. One setup fee and one flat monthly fee. Ad spend is paid
+        straight to Google and Meta on your own card, never through us. No
+        commission on your jobs and no lock-in. We&rsquo;ll give you exact
+        numbers on the call, once we&rsquo;ve looked at your region.
+      </p>
     ),
   },
   {
@@ -33,7 +25,7 @@ const QUESTIONS: { q: string; a: ReactNode }[] = [
     a: (
       <p>
         You get dashboard access on day one. Every lead, every SMS, every
-        follow-up, every call the dialler picked up — in there in real time, on
+        follow-up, every missed call we answered — in there in real time, on
         your phone. You don&rsquo;t wait for a monthly report to find out
         whether anything happened. If we go quiet, you&rsquo;ll see it before we
         tell you.
@@ -60,21 +52,31 @@ const QUESTIONS: { q: string; a: ReactNode }[] = [
     ),
   },
   {
-    q: "My suburb's too competitive. / My suburb's too small.",
+    q: "My area is too competitive / too small.",
     a: (
-      <>
-        <p>
-          Both are the same answer: one electrician per area, and once
-          it&rsquo;s taken it&rsquo;s taken.
-        </p>
-        <p className="mt-4">
-          Competitive means the searches are there and we&rsquo;re fighting for
-          position — winnable, because most of your competitors are still
-          sending ads to a homepage. Small means fewer searches, so we widen to
-          the suburbs you already drive through. Either way we tell you which
-          one you are on the call, before you pay anything.
-        </p>
-      </>
+      <p>
+        Either way, it&rsquo;s one electrician per region. We&rsquo;ll tell you
+        which applies on the call, before you pay anything.
+      </p>
+    ),
+  },
+  {
+    q: "I've tried an agency before and got nothing.",
+    a: (
+      <p>
+        Most agencies send ads to a homepage and stop there. We build the whole
+        loop: the ad, the page, a text back in 2 minutes, and every missed call
+        answered. And we&rsquo;re measured on quote requests, not clicks.
+      </p>
+    ),
+  },
+  {
+    q: "I'm not a tech guy.",
+    a: (
+      <p>
+        You don&rsquo;t need to be. You never touch anything we build. You check
+        one app on your phone for about 4 minutes a week.
+      </p>
     ),
   },
 ];

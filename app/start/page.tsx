@@ -6,6 +6,7 @@ import { ObjectionFaq } from "./_components/ObjectionFaq";
 import { ProofStrip } from "./_components/ProofStrip";
 import { RealProblem } from "./_components/RealProblem";
 import { FinalCta } from "./_components/FinalCta";
+import { FoundingSpots } from "./_components/FoundingSpots";
 import { SiteFooter } from "./_components/SiteFooter";
 import { SiteHeader } from "./_components/SiteHeader";
 import { StepFraming } from "./_components/StepFraming";
@@ -14,9 +15,9 @@ import { TrackingScripts } from "./_components/TrackingScripts";
 import { parseLeadContext } from "./lib/lead-context";
 
 export const metadata: Metadata = {
-  title: "Book your strategy call — Prospex",
+  title: "Local Domination System for Electricians | Prospex",
   description:
-    "100+ qualified leads in your first 30 days, or you don't pay. For licensed Aussie electricians.",
+    "$30,000 in quote requests in your first 30 days or we keep working free. Google Ads, a page built to book jobs, 2-minute text-backs and missed-call answering. One electrician per region.",
   // Paid-traffic funnel page reached only after the GHL questionnaire — it
   // shouldn't be findable out of sequence. Flip to true if that changes.
   robots: { index: false, follow: false },
@@ -39,7 +40,7 @@ export default async function BookPage({
       <TrackingScripts />
       <SiteHeader />
       <main>
-        <Hero lead={lead} />
+        <Hero />
         <StepFraming lead={lead} />
         <ProofStrip />
         <RealProblem />
@@ -47,6 +48,7 @@ export default async function BookPage({
         <TestimonialSection />
         <Guarantee />
         <ObjectionFaq />
+        <FoundingSpots />
         <FinalCta lead={lead} />
       </main>
       <SiteFooter />

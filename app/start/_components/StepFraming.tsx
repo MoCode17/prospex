@@ -39,9 +39,9 @@ export function StepFraming({ lead }: { lead: LeadContext }) {
             Pick a time below.
           </h2>
           <p className="mt-3 text-base leading-relaxed text-paper/80">
-            Twenty minutes on the phone. We look at your suburb, your numbers,
-            and whether this is worth doing. If it isn&rsquo;t, we&rsquo;ll tell
-            you.
+            Pick a time for a 20-minute call. We&rsquo;ll look at your region,
+            show you the numbers, and tell you straight whether it&rsquo;s worth
+            doing.
           </p>
 
           <div className="mt-8">
